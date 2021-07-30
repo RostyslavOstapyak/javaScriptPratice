@@ -1,0 +1,6 @@
+no-var
+qwqwqw
+no-undef
+no-plusplus
+no-return-assign
+no-undef
