@@ -1,4 +1,4 @@
-const n =5;
+const n =7;
 let sum=''
 for(let i=1;i<=n;){
   
