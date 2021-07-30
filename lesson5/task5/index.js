@@ -8,4 +8,3 @@ function getSum(firstNumber, secondNumber){
  }
  return sum;
 }
-console.log(getSum(1,8));
