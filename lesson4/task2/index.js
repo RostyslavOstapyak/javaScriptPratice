@@ -1,5 +1,5 @@
 const n =5;
-let sum='1'
+let sum=''
 for(let i=1;i<=n;){
   
   sum+=i;
