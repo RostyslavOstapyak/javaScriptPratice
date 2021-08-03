@@ -1,5 +1,5 @@
 const getMessagesForBestStudents = (allStudentsList, studentsForRetake) => {
-  let resultArr = allStudentsList.slice();
+  const resultArr = allStudentsList.slice();
   studentsForRetake.forEach(() =>{
     resultArr.splice(1,1)
     return resultArr;
@@ -10,15 +10,9 @@ const getMessagesForBestStudents = (allStudentsList, studentsForRetake) => {
   })
   console.log(resultArr);
   return resultArr;
-}; //this one is wrong solution self made
-
-//example 1:
-
-//input:
+}; 
 const allStud = ["a", "b", "c", "d"];
 const retakeStud = ["b", "d"];
 
 getMessagesForBestStudents(allStud, retakeStud);
 
-//output:
-//['Good job, a', 'Good job, c']
