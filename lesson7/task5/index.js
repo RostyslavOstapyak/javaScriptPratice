@@ -1,0 +1,14 @@
+function squareArray(arr) {
+  if (!Array.isArray(arr)) {
+    return null;
+  }
+  let resultArr = [];
+  arr.forEach((item) => {
+    resultArr.push(item*item)
+  });
+  return resultArr;
+}
+
+
+let arr=[1,2,3,4]
+console.log(squareArray(arr));
