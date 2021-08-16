@@ -8,12 +8,12 @@
 
 const concatProps = (obj) => {
   // put your code here
-  const resultArr = []; //creating array before cycle
+  const resultArr = []; // creating array before cycle
   for (const key in obj) {
     if (Object.hasOwnProperty.call(obj, key)) {
-      const element = obj[key]; //mint be deleted, created for qality of life
+      const element = obj[key]; // mint be deleted, created for qality of life
 
-      resultArr.push(element); //adding element to array
+      resultArr.push(element); // adding element to array
     }
   }
   return resultArr;
