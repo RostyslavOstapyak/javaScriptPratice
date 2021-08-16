@@ -1,6 +1,6 @@
 const transformToObject = (arr) => {
   // put your code here
-  let returnObj = {};
+  const returnObj = {};
   arr.forEach((item) => {
     returnObj[item] = item;
   });
