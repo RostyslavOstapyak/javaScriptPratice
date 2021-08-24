@@ -1,6 +1,6 @@
 "use strict";
 
-cconst withdraw = (clients, balances, names, amount) => {
+const withdraw = (clients, balances, names, amount) => {
   let result = 0;
   clients.forEach(function (client, index) {
     if (client.includes(names) && balances[index] >= amount) {
