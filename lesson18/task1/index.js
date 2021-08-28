@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 export const event = {
   message: "Welcome to the party!",
   guests: [

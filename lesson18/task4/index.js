@@ -4,7 +4,6 @@ export function saveCalls(func) {
   return function withMemory(...items) {
     calls.push(items);
     withMemory.calls = calls;
-    console.log(withMemory.calls);
     return func.apply(this, items);
   };
 }
@@ -17,4 +16,4 @@ const testWithMemory = saveCalls(test);
 testWithMemory(4, 2);
 testWithMemory(9, 1);
 
-// console.log(testWithMemory.calls);
+console.log(testWithMemory.calls);
