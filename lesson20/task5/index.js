@@ -38,6 +38,7 @@ export class UserRepository {
   }
 
   getUserNameById(id) {
+    // eslint-disable-next-line eqeqeq
     return this.users.find((el) => el._id == id).name;
   }
 }
@@ -59,8 +60,8 @@ export class UserRepository {
 // const user3 = new User("3", "Name3", "3");
 // const user4 = new User("4", "Name4", "4");
 // const user5 = new User("5", "Name5", "5");
-// user1._name = "nanameme";
-// user1._sessionId = "sfsf";
+// user1._name = "annamese";
+// user1._sessionId = "fsf";
 // user1._id = "123";
 
 // const newRepo = new UserRepository([user1, user2, user3, user4, user5]);
