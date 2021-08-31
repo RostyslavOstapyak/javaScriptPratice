@@ -1,6 +1,8 @@
 function getTitleElement() {
-  console.dir(document.querySelector(".title"));
-  return document.querySelector(".title");
+  const result = document.querySelector(".title");
+
+  console.dir(result);
+  return result;
 }
 
 getTitleElement();
