@@ -14,24 +14,32 @@ const clearField = () => {
   eventsListElem.innerHTML = "";
 };
 
-const removeHandlers = () => {
-  divElement.removeEventListener("click", logTarget("DIV", "green"));
-  pElement.removeEventListener("click", logTarget("P", "green"));
-  spanElement.removeEventListener("click", logTarget("SPAN", "green"));
+const logGreenDiv = logTarget.bind(null, "DIV", "green");
+const logGreenP = logTarget.bind(null, "P", "green");
+const logGreenSpan = logTarget.bind(null, "SPAN", "green");
 
-  divElement.removeEventListener("click", logTarget("DIV", "gray"), true);
-  pElement.removeEventListener("click", logTarget("P", "gray"), true);
-  spanElement.removeEventListener("click", logTarget("SPAN", "gray"), true);
+const logGreyDiv = logTarget.bind(null, "DIV", "gray");
+const logGrayP = logTarget.bind(null, "P", "gray");
+const logGraySpan = logTarget.bind(null, "SPAN", "gray");
+
+const removeHandlers = () => {
+  divElement.removeEventListener("click", logGreenDiv);
+  pElement.removeEventListener("click", logGreenP);
+  spanElement.removeEventListener("click", logGreenSpan);
+
+  divElement.removeEventListener("click", logGreyDiv, true);
+  pElement.removeEventListener("click", logGrayP, true);
+  spanElement.removeEventListener("click", logGraySpan, true);
 };
 
 const attachHandlers = () => {
-  divElement.addEventListener("click", logTarget("DIV", "green"));
-  pElement.addEventListener("click", logTarget("P", "green"));
-  spanElement.addEventListener("click", logTarget("SPAN", "green"));
+  divElement.addEventListener("click", logGreenDiv);
+  pElement.addEventListener("click", logGreenP);
+  spanElement.addEventListener("click", logGreenSpan);
 
-  divElement.addEventListener("click", logTarget("DIV", "gray"), true);
-  pElement.addEventListener("click", logTarget("P", "gray"), true);
-  spanElement.addEventListener("click", logTarget("SPAN", "gray"), true);
+  divElement.addEventListener("click", logGreyDiv, true);
+  pElement.addEventListener("click", logGrayP, true);
+  spanElement.addEventListener("click", logGraySpan, true);
 };
 attachHandlers();
 
