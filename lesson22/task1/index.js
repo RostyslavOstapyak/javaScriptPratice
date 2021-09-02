@@ -4,16 +4,14 @@ const spanElement = document.querySelector(".rect_span");
 const clearBtn = document.querySelector(".clear-btn");
 const removeBtn = document.querySelector(".remove-handlers-btn");
 const addBtn = document.querySelector(".attach-handlers-btn");
+const eventsListElem = document.querySelector(".events-list");
 
 const logTarget = (text, color) => {
-  console.log(`text added ${text}`);
-  const eventsListElem = document.querySelector(".events-list");
   eventsListElem.innerHTML += `<span style="color: ${color}; margin-left:8px;">${text}</span>`;
 };
 
 const clearField = () => {
-  console.log("field is cleared");
-  document.querySelector(".events-list").innerHTML = "";
+  eventsListElem.innerHTML = "";
 };
 
 const logGreenDiv = logTarget.bind(null, "DIV", "green");
@@ -51,6 +49,7 @@ const attachHandlers = () => {
   pElement.addEventListener("click", logGrayP, true);
   spanElement.addEventListener("click", logGraySpan, true);
 };
+attachHandlers();
 const clearBtnAction = clearField.bind(null);
 const removeHandlersAction = removeHandlers.bind(null);
 const attachHandlersAction = attachHandlers.bind(null);
@@ -58,4 +57,3 @@ const attachHandlersAction = attachHandlers.bind(null);
 clearBtn.addEventListener("click", clearBtnAction);
 removeBtn.addEventListener("click", removeHandlersAction);
 addBtn.addEventListener("click", attachHandlersAction);
-attachHandlers();
