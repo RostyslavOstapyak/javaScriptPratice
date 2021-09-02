@@ -58,3 +58,4 @@ const attachHandlersAction = attachHandlers.bind(null);
 clearBtn.addEventListener("click", clearBtnAction);
 removeBtn.addEventListener("click", removeHandlersAction);
 addBtn.addEventListener("click", attachHandlersAction);
+attachHandlers();
