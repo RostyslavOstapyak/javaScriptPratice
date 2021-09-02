@@ -25,13 +25,13 @@ const removeHandlers = () => {
 };
 
 const attachHandlers = () => {
-  divElement.addEventListener("click", logGreenDiv);
-  pElement.addEventListener("click", logGreenP);
-  spanElement.addEventListener("click", logGreenSpan);
+  divElement.addEventListener("click", logTarget("DIV", "green"));
+  pElement.addEventListener("click", logTarget("P", "green"));
+  spanElement.addEventListener("click", logTarget("SPAN", "green"));
 
-  divElement.addEventListener("click", logGreyDiv, true);
-  pElement.addEventListener("click", logGrayP, true);
-  spanElement.addEventListener("click", logGraySpan, true);
+  divElement.addEventListener("click", logTarget("DIV", "gray"), true);
+  pElement.addEventListener("click", logTarget("P", "gray"), true);
+  spanElement.addEventListener("click", logTarget("SPAN", "gray"), true);
 };
 attachHandlers();
 
