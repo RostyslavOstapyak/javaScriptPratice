@@ -41,8 +41,7 @@ const attachHandlers = () => {
   pElement.addEventListener("click", logGrayP, true);
   spanElement.addEventListener("click", logGraySpan, true);
 };
-
-attachHandlers();
+document.addEventListener("DOMContentLoaded", attachHandlers);
 
 clearBtn.addEventListener("click", clearField);
 removeBtn.addEventListener("click", removeHandlers);
