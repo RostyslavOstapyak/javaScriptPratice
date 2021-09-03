@@ -7,8 +7,7 @@ const addBtn = document.querySelector(".attach-handlers-btn");
 const eventsListElem = document.querySelector(".events-list");
 
 const logTarget = (text, color) => {
-  console.log(`${text} 1`);
-  eventsListElem.innerHTML += `<span style="color: ${color}; margin-left:8px;">${text}</span>`;
+  eventsListElem.innerHTML += `<span style="color: ${color}; margin-left: 8px;">${text}</span>`;
 };
 
 const clearField = () => {
@@ -42,7 +41,8 @@ const attachHandlers = () => {
   pElement.addEventListener("click", logGrayP, true);
   spanElement.addEventListener("click", logGraySpan, true);
 };
-document.addEventListener("DOMContentLoaded", attachHandlers);
+
+attachHandlers();
 
 clearBtn.addEventListener("click", clearField);
 removeBtn.addEventListener("click", removeHandlers);
