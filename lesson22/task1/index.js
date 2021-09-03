@@ -7,6 +7,7 @@ const addBtn = document.querySelector(".attach-handlers-btn");
 const eventsListElem = document.querySelector(".events-list");
 
 const logTarget = (text, color) => {
+  console.log(`${text} 1`);
   eventsListElem.innerHTML += `<span style="color: ${color}; margin-left:8px;">${text}</span>`;
 };
 
