@@ -51,15 +51,16 @@ const renderArena = () => {
   arenaElem.innerHTML = sectorsString;
 };
 
+// eslint-disable-next-line consistent-return
 const onSeatSelect = (event) => {
   const isSeat = event.target.classList.contains("sector__seat");
   if (!isSeat) {
     return null;
   }
 
-  const seatNumber = event.target.dataset.seatNumber;
-  const lineNumber = event.target.closest(".sector__line").dataset.lineNumber;
-  const sectorNumber = event.target.closest(".sector").dataset.sectorNumber;
+  const { seatNumber } = event.target.dataset;
+  const { lineNumber } = event.target.closest(".sector__line").dataset;
+  const { sectorNumber } = event.target.closest(".sector").dataset;
 
   const selectedSeatElem = document.querySelector(".board__selected-seat");
 
