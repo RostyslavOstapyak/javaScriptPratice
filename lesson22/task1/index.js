@@ -21,9 +21,9 @@ const logGreenDiv = logTarget.bind(null, "DIV", "green");
 const logGreenP = logTarget.bind(null, "P", "green");
 const logGreenSpan = logTarget.bind(null, "SPAN", "green");
 
-const logGreyDiv = logTarget.bind(null, "DIV", "gray");
-const logGrayP = logTarget.bind(null, "P", "gray");
-const logGraySpan = logTarget.bind(null, "SPAN", "gray");
+const logGreyDiv = logTarget.bind(null, "DIV", "grey");
+const logGrayP = logTarget.bind(null, "P", "grey");
+const logGraySpan = logTarget.bind(null, "SPAN", "grey");
 
 const removeHandlers = () => {
   divElement.removeEventListener("click", logGreenDiv);
