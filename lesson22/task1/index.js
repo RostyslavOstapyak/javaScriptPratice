@@ -11,7 +11,7 @@ const logTarget = (text, color) => {
   createSpanElement.style.color = color;
   createSpanElement.style.marginLeft = "8px";
   createSpanElement.textContent = text;
-  eventsListElem.append(createSpanElement);
+  eventsListElem.appendChild(createSpanElement);
 };
 
 const clearField = () => {
