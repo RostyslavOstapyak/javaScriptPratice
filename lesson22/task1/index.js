@@ -8,8 +8,7 @@ const eventsListElem = document.querySelector(".events-list");
 
 const logTarget = (text, color) => {
   const createSpanElement = document.createElement("span");
-  createSpanElement.style.color = color;
-  createSpanElement.style.marginLeft = "8px";
+  createSpanElement.style = `color: ${color}; margin-left: 8px;`;
   createSpanElement.textContent = text;
   eventsListElem.appendChild(createSpanElement);
 };
