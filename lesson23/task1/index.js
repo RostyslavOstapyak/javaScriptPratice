@@ -14,6 +14,8 @@ const renderTasks = (tasksList) => {
     .map(({ text, done }) => {
       const listItemElem = document.createElement("li");
       listItemElem.classList.add("list__item");
+      const id = Math.random().toFixed(2) * 100;
+      listItemElem.setAttribute("data-id", id);
       const checkbox = document.createElement("input");
       checkbox.setAttribute("type", "checkbox");
       checkbox.checked = done;
@@ -43,3 +45,16 @@ function addTask() {
   renderTasks(tasks); // render new elements
 }
 createButton.addEventListener("click", addTask);
+
+const checkbox = document.querySelectorAll(".list__item-checkbox");
+
+function doneTask(el) {
+  console.log(el.parentNode.getAttribute("data-id"));
+  const dataValue = el.parentNode.getAttribute("data-id");
+  const item = document.querySelector(`[data-id='${dataValue}]'`);
+  item.classList.add("list__item_done");
+}
+
+[...checkbox].forEach((el) => {
+  el.addEventListener("checked", doneTask(el));
+});

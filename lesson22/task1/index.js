@@ -7,7 +7,11 @@ const addBtn = document.querySelector(".attach-handlers-btn");
 const eventsListElem = document.querySelector(".events-list");
 
 const logTarget = (text, color) => {
-  eventsListElem.innerHTML += `<span style="color: ${color}; margin-left: 8px;">${text}</span>`;
+  const createSpanElement = document.createElement("span");
+  createSpanElement.style.color = color;
+  createSpanElement.style.marginLeft = "8px";
+  createSpanElement.textContent = text;
+  eventsListElem.append(createSpanElement);
 };
 
 const clearField = () => {
