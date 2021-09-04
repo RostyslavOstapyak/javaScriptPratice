@@ -45,10 +45,10 @@ const attachHandlers = () => {
   spanElement.addEventListener("click", logGraySpan, true);
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  attachHandlers();
-});
-
 clearBtn.addEventListener("click", clearField);
 removeBtn.addEventListener("click", removeHandlers);
 addBtn.addEventListener("click", attachHandlers);
+
+document.addEventListener("DOMContentLoaded", () => {
+  attachHandlers();
+});
