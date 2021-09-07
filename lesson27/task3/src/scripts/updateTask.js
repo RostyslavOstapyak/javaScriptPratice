@@ -1,5 +1,5 @@
-import { renderTasks } from "./renderer";
-import { getItem, setItem } from "./storage";
+import { renderTasks } from "./renderer.js";
+import { getItem, setItem } from "./storage.js";
 
 export const onToggleTask = (e) => {
   const isCheckbox = e.target.classList.contains("");

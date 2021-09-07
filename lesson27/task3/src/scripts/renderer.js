@@ -1,4 +1,4 @@
-import { getItem } from "./storage";
+import { getItem } from "./storage.js";
 
 const listElem = document.querySelector(".list");
 
@@ -16,7 +16,7 @@ const createCheckbox = ({ done, id }) => {
 
 const createListItem = ({ text, done, id }) => {
   const listItemElement = document.createElement("li");
-  listItemElement.classList.add("list-item");
+  listItemElement.classList.add("list__item");
   const checkboxElem = createCheckbox({ done, id });
 
   if (done) {
