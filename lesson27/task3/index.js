@@ -11,7 +11,6 @@ const onStorageChange = (e) => {
     return null;
   }
   renderTasks();
-  return null;
 };
 
 window.addEventListener("storage", onStorageChange);
