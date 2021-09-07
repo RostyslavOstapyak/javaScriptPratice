@@ -18,7 +18,7 @@ export const onCreateTask = () => {
     text,
     done: false,
     createDate: new Date().toISOString(),
-    id: Math.random().toString(),
+    id: (Math.random().toFixed(4) * 10000).toString(),
   });
 
   setItem("tasksList", newTaskList);
