@@ -23,4 +23,5 @@ export const onCreateTask = () => {
   setItem("tasksList", newTaskList);
 
   renderTasks();
+  return newTaskList;
 };

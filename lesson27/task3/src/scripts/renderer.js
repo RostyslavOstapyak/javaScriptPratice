@@ -1,8 +1,9 @@
-import { getItem, setItem } from "./storage";
+import { getItem } from "./storage";
 
 const listElem = document.querySelector(".list");
 
 const compareTasks = (a, b) => a.createDate - b.createDate;
+
 const createCheckbox = ({ done, id }) => {
   const checkboxElem = document.createElement("input");
   checkboxElem.setAttribute("type", "checkbox");
