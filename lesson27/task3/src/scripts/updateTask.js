@@ -1,6 +1,7 @@
 import { renderTasks } from "./renderer.js";
 import { getItem, setItem } from "./storage.js";
 
+// eslint-disable-next-line consistent-return
 export const onToggleTask = (e) => {
   const isCheckbox = e.target.classList.contains("list__item-checkbox");
 
