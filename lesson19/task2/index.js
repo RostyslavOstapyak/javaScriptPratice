@@ -5,7 +5,7 @@
 export function getOwnProps(obj) {
   const resultArray = [];
   for (let prop in obj) {
-    if (obj.hasOwnProperty(prop) & (typeof obj[prop] !== "function")) {
+    if (obj.hasOwnProperty(prop) && typeof obj[prop] !== "function") {
       resultArray.push(prop);
     }
   }

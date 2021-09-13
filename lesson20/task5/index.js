@@ -38,7 +38,7 @@ export class UserRepository {
   }
 
   getUserNameById(id) {
-    // eslint-disable-next-line eqeqeq
+    // eslint-disable-next-line
     return this.users.find((el) => el._id == id).name;
   }
 }
