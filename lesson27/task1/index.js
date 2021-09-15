@@ -17,5 +17,4 @@ const getLocalStorageData = () =>
       [key]: newValue,
     };
   }, {});
-
 console.log(getLocalStorageData());

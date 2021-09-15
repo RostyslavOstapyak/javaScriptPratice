@@ -1,5 +1,3 @@
-"use strict";
-
 const promiseNumber1 = Promise.resolve(67);
 const promiseNumber2 = Promise.resolve(23);
 const promiseNumber3 = Promise.resolve(8);
