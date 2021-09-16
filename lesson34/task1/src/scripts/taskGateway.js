@@ -11,3 +11,11 @@ export const createTask = (taskData) =>
     },
     body: JSON.stringify(taskData),
   });
+export const updateTask = (id, value) =>
+  fetch(`${baseUrl}/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(value),
+  });

@@ -28,14 +28,10 @@ const createListItem = ({ text, done, id }) => {
 };
 
 export const renderTasks = () => {
-  console.log("render is running");
-  let tasksList = getItem("tasksList") || [];
-  if (getItem("tasksList") === "Not found") {
-    tasksList = [];
-  }
+  const tasksList = getItem();
 
   listElem.innerHTML = "";
-  const tasksElems = tasksList.sort(compareTasks).map(createListItem);
-
-  listElem.append(...tasksElems);
+  tasksList
+    .then((elem) => elem.sort(compareTasks).map(createListItem))
+    .then((elem) => listElem.append(...elem));
 };
