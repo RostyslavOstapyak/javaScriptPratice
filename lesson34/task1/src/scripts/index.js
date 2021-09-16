@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initTodoListHandlers();
 });
 
-// eslint-disable-next-line consistent-return
 const onStorageChange = (e) => {
+  console.log(e);
   if (e.key !== "tasksList") {
     return null;
   }
