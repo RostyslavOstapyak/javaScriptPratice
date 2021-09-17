@@ -1,6 +1,6 @@
 import { renderTasks } from "./renderer.js";
-// import { setItem } from "./storage.js";
-import { createTask, getTasksList } from "./taskGateway.js";
+
+import { createTask } from "./taskGateway.js";
 
 // eslint-disable-next-line consistent-return
 export const onCreateTask = () => {
