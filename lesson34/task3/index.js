@@ -30,7 +30,7 @@ const sendData = (formData) =>
 
 const submitData = (event) => {
   event.preventDefault();
-  const formData = Object.fromEntries(new FormData(formEl));
+  const formData = Object.fromEntries(new FormData(formElement));
   sendData(formData)
     .then((response) => response.json())
     .then((userData) => {
