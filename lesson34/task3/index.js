@@ -25,7 +25,7 @@ const sendData = (formData) =>
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: formData,
+    body: JSON.stringify(formData),
   });
 
 const submitData = (event) => {
