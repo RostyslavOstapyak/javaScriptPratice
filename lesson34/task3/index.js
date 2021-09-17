@@ -7,6 +7,7 @@ const formElement = document.querySelector(".login-form");
 const errorElement = document.querySelector(".error-text");
 
 const isValidForm = () => {
+  // eslint-disable-next-line no-unused-expressions
   formElement.reportValidity()
     ? (submitButton.disabled = false)
     : (submitButton.disabled = true);
