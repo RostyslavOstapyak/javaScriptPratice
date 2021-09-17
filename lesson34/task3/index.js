@@ -7,11 +7,10 @@ const formElement = document.querySelector(".login-form");
 const errorElement = document.querySelector(".error-text");
 
 const isValidForm = () => {
-  if (formElement.reportValidity()) {
-    submitButton.disabled = false;
-  } else {
-    submitButton.disabled = true;
-  }
+  formElement.reportValidity()
+    ? (submitButton.disabled = false)
+    : (submitButton.disabled = true);
+  errorElement.textContent = "";
 };
 
 const sendData = (event) => {
