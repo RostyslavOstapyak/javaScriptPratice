@@ -15,7 +15,7 @@ const userNameInput = document.querySelector(".name-form__input");
 
 const fetchUserData = (userName) =>
   fetch(`https://api.github.com/users/${userName}`) // if we need only GET we may not put second parameter for fetch usually it looks like fetch(url,options)
-    .then((response) => console.log(response));
+    .then((response) => response.json());
 
 const renderUserData = (userData) => {
   const { avatar_url, name, location } = userData;
