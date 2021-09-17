@@ -19,22 +19,19 @@ const isValidForm = () => {
   errorElement.textContent = "";
 };
 
-const sendData = () =>
+const sendData = (formData) =>
   fetch(baseUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify({
-      email: emailField.value,
-      userName: userNameField.value,
-      password: passwordField.value,
-    }),
+    body: formData,
   });
 
 const submitData = (event) => {
   event.preventDefault();
-  sendData()
+  const formData = Object.fromEntries(new FormData(formEl));
+  sendData(formData)
     .then((response) => response.json())
     .then((userData) => {
       alert(JSON.stringify(userData));
