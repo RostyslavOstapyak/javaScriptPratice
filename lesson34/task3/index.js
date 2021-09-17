@@ -19,17 +19,20 @@ const isValidForm = () => {
   errorElement.textContent = "";
 };
 
+const getData = () =>
+  JSON.stringify({
+    email: emailField.value,
+    userName: userNameField.value,
+    password: passwordField.value,
+  });
+
 const sendData = () =>
   fetch(baseUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify({
-      email: emailField.value,
-      userName: userNameField.value,
-      password: passwordField.value,
-    }),
+    body: getData(),
   });
 
 const submitData = (event) => {
