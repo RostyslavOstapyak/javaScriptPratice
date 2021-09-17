@@ -1,6 +1,5 @@
 import { renderTasks } from "./renderer.js";
-import { getItem, setItem } from "./storage.js";
-import { updateTask } from "./taskGateway.js";
+import { getTasksList, updateTask } from "./taskGateway.js";
 
 // eslint-disable-next-line consistent-return
 export const onToggleTask = (e) => {
@@ -10,7 +9,7 @@ export const onToggleTask = (e) => {
     return null;
   }
 
-  const tasksList = getItem("tasksList");
+  const tasksList = getTasksList("tasksList");
 
   tasksList.then((el) =>
     el.map((task) => {

@@ -1,43 +1,38 @@
-const URL = "https://61422caa4d16670017ba2c4f.mockapi.io/toDoApi/";
+const baseUrl = "https://61422caa4d16670017ba2c4f.mockapi.io/toDoApi/users";
 
 function getUsersList() {
-  return fetch(`${URL}/users`).then((response) => response.json());
+  return fetch(`${baseUrl}`).then((response) => response.json());
 }
 
-// function getUserById(userId) {
-//   return fetch(`${URL}/users/${userId}`).then((response) => response.json());
-// }
+function getUserById(userId) {
+  return fetch(`${baseUrl}/${userId}`).then((response) => response.json());
+}
 
-// function createUser(userData) {
-//   return fetch(`${URL}/users`, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json;charset=utf-8",
-//     },
-//     body: JSON.stringify(userData),
-//   });
-// }
+function createUser(userData) {
+  return fetch(`${baseUrl}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(userData),
+  });
+}
 
-// function deleteUser(userId) {
-//   return fetch(`${URL}/users/${userId}`, {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json;charset=utf-8",
-//     },
-//   });
-// }
+function deleteUser(userId) {
+  return fetch(`${baseUrl}/${userId}`, {
+    method: "DELETE",
+  });
+}
 
-// function updateUser(userId, userData) {
-//   return fetch(`${URL}/users/${userId}`, {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json;charset=utf-8",
-//     },
-//     body: {
-//       userData,
-//     },
-//   });
-// }
+function updateUser(userId, userData) {
+  return fetch(`${baseUrl}/${userId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify(userData),
+  });
+}
 
 // =============================================================================================================================
 
@@ -61,16 +56,16 @@ getUsersList().then((users) => {
 //   console.log("User created");
 // });
 
-// const updatedUserData = {
-//   email: "new@email.com",
-//   firstName: "John",
-//   lastName: "Doe",
-//   age: 17,
-// };
+const updatedUserData = {
+  email: "new@email.com",
+  firstName: "John",
+  lastName: "Doe",
+  age: 17,
+};
 
-// updateUser("1", updatedUserData).then(() => {
-//   console.log("User updated");
-// });
+updateUser("1", updatedUserData).then(() => {
+  console.log("User updated");
+});
 
 // deleteUser("1").then(() => {
 //   console.log("User updated");

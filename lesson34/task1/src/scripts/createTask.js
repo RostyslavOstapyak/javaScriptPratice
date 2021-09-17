@@ -1,5 +1,5 @@
 import { renderTasks } from "./renderer.js";
-import { setItem } from "./storage.js";
+// import { setItem } from "./storage.js";
 import { createTask, getTasksList } from "./taskGateway.js";
 
 // eslint-disable-next-line consistent-return
@@ -20,8 +20,7 @@ export const onCreateTask = () => {
     createDate: new Date().toISOString(),
   };
 
-  createTask(newTask).then((newTasksList) => {
-    setItem("tasksList", newTasksList);
+  createTask(newTask).then(() => {
     renderTasks();
   });
 };

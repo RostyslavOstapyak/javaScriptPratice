@@ -1,4 +1,4 @@
-import { getItem } from "./storage.js";
+import { getTasksList } from "./taskGateway.js";
 
 const listElem = document.querySelector(".list");
 
@@ -28,7 +28,7 @@ const createListItem = ({ text, done, id }) => {
 };
 
 export const renderTasks = () => {
-  const tasksList = getItem();
+  const tasksList = getTasksList();
 
   listElem.innerHTML = "";
   tasksList

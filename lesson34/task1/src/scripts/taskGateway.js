@@ -19,3 +19,9 @@ export const updateTask = (id, value) =>
     },
     body: JSON.stringify(value),
   });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   getTasksList().then((tasks) => {
+//     setItem("tasksList", tasks);
+//   });
+// });
