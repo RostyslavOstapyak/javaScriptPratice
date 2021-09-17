@@ -22,18 +22,18 @@ const isValidForm = () => {
 const sendData = (event) => {
   event.preventDefault();
 
-  const data = {
+  const data = JSON.stringify({
     email: emailField.value,
     userName: userNameField.value,
     password: passwordField.value,
-  };
+  });
   //   console.log(data);
   fetch(baseUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(data),
+    body: data,
   })
     .then((response) => response.json())
     .then((userData) => {
