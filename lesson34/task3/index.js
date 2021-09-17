@@ -19,10 +19,7 @@ const isValidForm = () => {
   errorElement.textContent = "";
 };
 
-const sendData = (event) => {
-  event.preventDefault();
-
-  //   console.log(data);
+const sendData = () =>
   fetch(baseUrl, {
     method: "POST",
     headers: {
@@ -33,17 +30,21 @@ const sendData = (event) => {
       userName: userNameField.value,
       password: passwordField.value,
     }),
-  })
+  });
+
+const submitData = (event) => {
+  event.preventDefault();
+  sendData()
     .then((response) => response.json())
     .then((userData) => {
+      alert(JSON.stringify(userData));
       formElement.reset();
       submitButton.disabled = true;
-      alert(JSON.stringify(userData));
     })
     .catch(() => {
       errorElement.textContent = "Failed to create user";
     });
 };
 
-formElement.addEventListener("submit", sendData);
+formElement.addEventListener("submit", submitData);
 formElement.addEventListener("input", isValidForm);
