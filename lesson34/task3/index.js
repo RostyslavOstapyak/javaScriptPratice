@@ -2,15 +2,20 @@ const baseUrl = "https://61422caa4d16670017ba2c4f.mockapi.io/toDoApi/users";
 const emailField = document.querySelector("#email");
 const userNameField = document.querySelector("#name");
 const passwordField = document.querySelector("#password");
+
 const submitButton = document.querySelector(".submit-button");
 const formElement = document.querySelector(".login-form");
 const errorElement = document.querySelector(".error-text");
 
 const isValidForm = () => {
   // eslint-disable-next-line no-unused-expressions
-  formElement.reportValidity()
-    ? (submitButton.disabled = false)
-    : (submitButton.disabled = true);
+  if (
+    emailField.reportValidity() &&
+    passwordField.reportValidity() &&
+    userNameField.reportValidity()
+  ) {
+    submitButton.disabled = false;
+  }
   errorElement.textContent = "";
 };
 
@@ -32,13 +37,11 @@ const sendData = (event) => {
   })
     .then((response) => response.json())
     .then((userData) => {
-      emailField.value = "";
-      userNameField.value = "";
-      passwordField.value = "";
+      formElement.reset();
       submitButton.disabled = true;
       alert(JSON.stringify(userData));
     })
-    .catch((error) => {
+    .catch(() => {
       errorElement.textContent = "Failed to create user";
     });
 };

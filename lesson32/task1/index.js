@@ -12,13 +12,11 @@ const asyncNum3 = getValueWithDelay(33, 1000);
 const asyncNum4 = getValueWithDelay(44, 1000);
 
 //
-//
-//
-//
+
 const asyncSum = (...asyncNumbers) =>
   Promise.all(asyncNumbers)
     .then((numbers) =>
-      numbers
+      numbers // [11,22,33,44]
         .filter((value) => !isNaN(value))
         .reduce((acc, num) => acc + Number(num))
     )
