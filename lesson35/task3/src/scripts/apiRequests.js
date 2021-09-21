@@ -1,7 +1,7 @@
 export const fetchUserData = (userName) =>
-  fetch(`https://ai.github.com/users/${userName}`).then((response) => {
-    // this one is broken for testing error
-    //   fetch(`https://api.github.com/users/${userName}`).then((response) => {
+  //   fetch(`https://ai.github.com/users/${userName}`).then((response) => {
+  // this one is broken for testing error
+  fetch(`https://api.github.com/users/${userName}`).then((response) => {
     if (response.ok) {
       return response.json();
     }
