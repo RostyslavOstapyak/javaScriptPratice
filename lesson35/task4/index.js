@@ -1,32 +1,13 @@
-window.addEventListener("error", (err) => {
-  // function onUnhandledError
-  console.error("error", err.message);
-});
+const test1 = JSON.stringify({ name: "Tom" });
+const test2 = { name: "Tom" };
 
-let userParsingResult;
+export const parseUser = (userObj) => {
+  try {
+    return JSON.parse(userObj);
+  } catch (err) {
+    return null;
+  }
+};
 
-let userr = '{"name":"Tom"}';
-
-try {
-  const user = JSON.parse(userr);
-  console.log("User data: ", user);
-  userParsingResult = "success";
-} catch (e) {
-  userParsingResult = "error";
-} finally {
-  console.log(`User parsing finished with ${userParsingResult}`);
-}
-
-let productParsingResult;
-
-let product = '{"name":"naName"}';
-
-try {
-  const product = JSON.parse(product); // data is correct but it fails because variable already declared inside function
-  console.log("Product data: ", product); // product have same name as variable that we trow inside function
-  productParsingResult = "success";
-} catch (e) {
-  productParsingResult = "error";
-} finally {
-  console.log(`Product parsing finished with ${productParsingResult}`);
-}
+console.log(parseUser(test1));
+console.log(parseUser(test2));
