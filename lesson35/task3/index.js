@@ -20,17 +20,15 @@ renderUserData(defaultUser);
 const onSearchUser = () => {
   showSpinner();
   const userName = userNameInput.value;
-
-  fetchUserData(userName).then((userData) => renderUserData(userData));
-
   fetchUserData(userName)
     .then((userData) => {
       renderUserData(userData);
       return userData.repos_url;
     })
     .then((url) => fetchRepositories(url))
-    .then((repoList) => {
-      renderRepos(repoList);
+    .then((reposList) => {
+      renderRepos(reposList);
+      hideSpinner();
     })
     .catch((err) => {
       alert(err.message);
