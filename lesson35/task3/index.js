@@ -32,13 +32,12 @@ const onSearchUser = () => {
     .then((repoList) => {
       renderRepos(repoList);
     })
-
+    .catch((err) => {
+      alert(err.message);
+    })
     .finally(() => {
       hideSpinner();
     });
-  fetchUserData(userName).catch((err) => {
-    alert(err.message);
-  });
 };
 
 showUserBtnElem.addEventListener("click", onSearchUser);
