@@ -3,7 +3,7 @@ import {
   renderRepos,
   clearList,
 } from "./src/scripts/render.js";
-import { toggleSpinner, hideSpinner } from "./src/scripts/spinner.js";
+import { showSpinner, hideSpinner } from "./src/scripts/spinner.js";
 import { fetchUserData, fetchRepositories } from "./src/scripts/apiRequests.js";
 
 const defaultUserAvatar = "https://avatars3.githubusercontent.com/u10001";
@@ -18,7 +18,7 @@ const showUserBtnElem = document.querySelector(".name-form__btn");
 renderUserData(defaultUser);
 
 const onSearchUser = () => {
-  toggleSpinner();
+  showSpinner();
   const userName = userNameInput.value;
 
   fetchUserData(userName).then((userData) => renderUserData(userData));
