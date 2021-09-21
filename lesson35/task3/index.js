@@ -32,11 +32,12 @@ const onSearchUser = () => {
     .then((repoList) => {
       renderRepos(repoList);
     })
-    .catch((err) => {
-      alert(err.message);
-    })
+
     .then(() => {
       toggleSpinner();
+    })
+    .catch((err) => {
+      alert(err.message);
     });
 };
 
