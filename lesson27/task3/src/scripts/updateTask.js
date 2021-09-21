@@ -10,6 +10,7 @@ export const onToggleTask = (e) => {
   }
 
   const tasksList = getItem("tasksList");
+
   const newTasksList = tasksList.map((task) => {
     if (task.id === e.target.dataset.id) {
       console.log(e.target.checked);
