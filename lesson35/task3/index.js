@@ -35,7 +35,7 @@ const onSearchUser = () => {
     .catch((err) => {
       alert(err.message);
     })
-    .finally(() => {
+    .then(() => {
       toggleSpinner();
     });
 };

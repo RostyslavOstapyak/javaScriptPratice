@@ -15,6 +15,7 @@ export const clearList = () => {
 };
 
 export const renderRepos = (repoList) => {
+  listElem.innerHTML = "";
   const repoListElem = repoList.map(({ name }) => {
     const listItemElem = document.createElement("li");
     listItemElem.classList.add("repo-list__item");
