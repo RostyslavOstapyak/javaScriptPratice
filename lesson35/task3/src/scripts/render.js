@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const userAvatarElem = document.querySelector(".user__avatar");
 const usernameElem = document.querySelector(".user__name");
 const userLocationELem = document.querySelector(".user__location");

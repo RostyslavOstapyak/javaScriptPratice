@@ -3,7 +3,7 @@ import {
   renderRepos,
   clearList,
 } from "./src/scripts/render.js";
-import { toggleSpinner } from "./src/scripts/spinner.js";
+import { toggleSpinner, hideSpinner } from "./src/scripts/spinner.js";
 import { fetchUserData, fetchRepositories } from "./src/scripts/apiRequests.js";
 
 const defaultUserAvatar = "https://avatars3.githubusercontent.com/u10001";
@@ -32,12 +32,11 @@ const onSearchUser = () => {
     .then((repoList) => {
       renderRepos(repoList);
     })
-
-    .then(() => {
-      toggleSpinner();
-    })
     .catch((err) => {
       alert(err.message);
+    })
+    .finally(() => {
+      hideSpinner();
     });
 };
 
