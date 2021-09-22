@@ -11,6 +11,7 @@ export const fetchUserData = async (userName) => {
 
 export const fetchRepositories = async (url) => {
   const response = await fetch(url);
+
   if (!response.ok) {
     throw new Error("Failed to load data");
   }
